@@ -47,7 +47,7 @@ module Motion; class Command
       archive = archive_path()
       puts bold("Validate: ") + archive
 
-      exitcode = altool("-v -f \"#{archive}\" -u \"#{@adc_id}\" -p \"#{password}\"")
+      exitcode = altool("-v -f \"#{archive}\" -u \"#{@adc_id}\" -p \"#{password}\" --type ios")
       exit(exitcode)
     end
 
