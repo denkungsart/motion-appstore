@@ -57,10 +57,10 @@ module Utils
     end
 
     unless @config
-      config = `rake config`.strip
+      config = `bundle exec rake config`.strip
       if config.empty?
         # for motion-game/flow
-        config = `rake ios:config`.strip
+        config = `bundle exec rake ios:config`.strip
       end
 
       @config = {}
