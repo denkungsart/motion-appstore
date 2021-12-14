@@ -25,15 +25,15 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 module Utils
-  ALTOOL = "/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool"
+  ALTOOL = "xcrun altool"
 
   def altool(arg)
     if verbose?
       puts "----------------------------------------"
       puts " COMMAND :                              "
-      puts "\"#{ALTOOL}\" #{arg}"
+      puts "#{ALTOOL} #{arg}"
     end
-    message = `\"#{ALTOOL}\" #{arg} 2>&1`
+    message = `#{ALTOOL} #{arg} 2>&1`
     if verbose?
       puts "----------------------------------------"
       puts " RETURN :                               "
@@ -48,7 +48,7 @@ module Utils
 
   CONFIG_KEY = %w(
     build_dir
-    deployment_target      
+    deployment_target
   )
 
   def config
